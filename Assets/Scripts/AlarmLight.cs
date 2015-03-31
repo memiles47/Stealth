@@ -9,14 +9,19 @@ public class AlarmLight : MonoBehaviour
     public float lowIntensity = 0.5f;
     public float changeMargin = 0.2f;
     public bool alarmOn;
-    public Light light;
 
     // Declaration of private variables
     private float targetIntensity;
-    //private Light light;
+    private Light light;
 
     // Awake is called when the script instance is being loaded
     void Awake()
+    {
+        light = GetComponent<Light>();
+    }
+
+    // Start is called just before any of the Update methods is called the first time
+    void Start()
     {
         light.intensity = 0.0f;
         targetIntensity = highIntensity;
