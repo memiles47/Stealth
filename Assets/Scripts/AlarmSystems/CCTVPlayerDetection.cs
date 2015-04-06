@@ -10,7 +10,7 @@ public class CCTVPlayerDetection : MonoBehaviour
     private LastPlayerSighting lastPlayerSighting;
 
     // Awake is called when the script instance is being loaded
-    public void Awake()
+    void Awake()
     {
         player = GameObject.FindGameObjectWithTag(Tags.player);
         lastPlayerSighting = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<LastPlayerSighting>();
