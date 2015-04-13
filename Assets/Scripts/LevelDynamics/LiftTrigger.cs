@@ -33,14 +33,14 @@ public class LiftTrigger : MonoBehaviour
     }
 
     // Update is called every frame, if the MonoBehaviour is enabled
-    public void Update()
+    void Update()
     {
         if(playerInLift)
         {
             LiftActivation();
         }
 
-        if(timer > timeToDoorsClose)
+        if(timer < timeToDoorsClose)
         {
             liftDoorsTracking.DoorFollowing();
         }
@@ -53,7 +53,7 @@ public class LiftTrigger : MonoBehaviour
 
 
     // OnTriggerEnter is called when the Collider other enters the trigger
-    public void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if(other.gameObject == player)
         {
@@ -62,7 +62,7 @@ public class LiftTrigger : MonoBehaviour
     }
 
     // OnTriggerExit is called when the Collider other has stopped touching the trigger
-    public void OnTriggerExit(Collider other)
+    void OnTriggerExit(Collider other)
     {
         if(other.gameObject == playerInLift)
         {
